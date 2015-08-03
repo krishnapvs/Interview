@@ -25,6 +25,7 @@ class LinkedList:
         print None
 
 def linkedlistmerger(a,b):
+    #7.	Merges two sorted linked lists.
     if a.head==None and b.head==None:
         return None
     elif a.head==None:
