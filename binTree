@@ -1,0 +1,40 @@
+import random
+
+class Node:
+    def __init__(self,value,left=None,right=None):
+        self.key=value
+        self.left=left
+        self.right=right
+
+class BinTree:
+    root=None
+    def append(self,key):
+        if not self.root:
+            self.root=Node(key)
+        else:
+            temp=self.root
+            while(temp):
+                fac=random.randint(0,1)
+                if fac:
+                    temp.right=Node(key)
+                else:
+                    temp.left=Node(key)
+            
+            
+def treePrint(head):
+    temp=head
+    if temp:
+        print temp.key
+        print '/',
+        print '   ',
+        treePrint(temp.left),
+        print '  '
+        treePrint(temp.right)
+    else:
+        return
+
+T=BinTree()
+for i in range(10):
+    T.append(i)
+treePrint(T.root)
+            
