@@ -2,7 +2,7 @@
 3 steps at a time. Implement a method to count how many possible ways the child can run up the stairs.'''
 
 def numOfWays(n,l=[]):
-#    print l
+''' uses DP approach and returns from the array'''
     if n<0:
         return 0
     if not l:
@@ -14,6 +14,7 @@ def numOfWays(n,l=[]):
         return l[n]
 
 def countWays(n):
+''' uses simple recursion and can be very time consuming'''
     if n<0:
         return 0
     elif n==0:
@@ -22,5 +23,5 @@ def countWays(n):
         return countWays(n-1) + countWays(n-2) + countWays(n-3)
 
 
-#print numOfWays(30)
+print numOfWays(30)
 print countWays(30)
